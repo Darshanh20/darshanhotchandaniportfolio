@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import './HeroSection.css'
 import { useState, useEffect } from 'react'
+import meImage from '../Assets/me.png'
 
 /**
  * HeroTitle Component
@@ -202,7 +203,7 @@ export default function HeroSection() {
 
         {/* Right side - Image content */}
         <div className="hero-content-right">
-          <HeroImage src="/src/assets/me.png" alt="Darshan Hotchandani" />
+          <HeroImage src={meImage} alt="Darshan Hotchandani" />
         </div>
       </div>
 

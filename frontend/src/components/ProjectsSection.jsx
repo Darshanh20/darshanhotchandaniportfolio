@@ -1,12 +1,36 @@
 import { useState } from 'react'
 import './ProjectsSection.css'
+import p1_1 from '../Assets/p1(1).png'
+import p1_2 from '../Assets/p1(2).png'
+import p1_3 from '../Assets/p1(3).png'
+import p1_4 from '../Assets/p1(4).png'
+import p3_1 from '../Assets/p3(1).png'
+import p3_2 from '../Assets/p3(2).png'
+import p4_1 from '../Assets/p4(1).png'
+import p4_2 from '../Assets/p4(2).png'
+import p4_3 from '../Assets/p4(3).png'
+import p2_4 from '../Assets/p2(4).png'
+import p5_1 from '../Assets/p5(1).png'
+import p5_2 from '../Assets/p5(2).png'
+import p6_1 from '../Assets/p6(1).png'
+import p6_2 from '../Assets/p6(2).png'
+import p6_3 from '../Assets/p6(3).png'
+import p6_4 from '../Assets/p6(4).png'
+import p7_1 from '../Assets/p7(1).png'
+import p7_2 from '../Assets/p7(2).png'
+import p7_3 from '../Assets/p7(3).png'
+import p7_4 from '../Assets/p7(4).png'
+import p8_1 from '../Assets/p8(1).png'
+import p8_2 from '../Assets/p8(2).png'
+import p8_3 from '../Assets/p8(3).png'
+import p8_4 from '../Assets/p8(4).png'
 
 const PROJECTS = [
     {
     id: 7,
     title: 'ProGrade',
     type: 'group',
-    images: ['p8(1).png', 'p8(2).png', 'p8(3).png', 'p8(4).png'],
+    images: [p8_1, p8_2, p8_3, p8_4],
     description: 'ProGrade is a rubrics-based project evaluation system designed to streamline academic assessments. It allows faculty to create, customize, and apply structured rubrics for fair, consistent, and transparent project grading. With an intuitive interface built using React and Node.js, ProGrade simplifies evaluation workflows while improving accuracy. It bridges the gap between students and faculty by ensuring clarity, feedback, and organized result tracking.',
     links: [
       { label: 'GitHub Link', url: 'https://github.com/rajank18/SGP_S5' },
@@ -17,7 +41,7 @@ const PROJECTS = [
     id: 1,
     title: 'ShareEZ',
     type: 'individual',
-    images: ['p6(1).png', 'p6(2).png', 'p6(3).png', 'p6(4).png'],
+    images: [p6_1, p6_2, p6_3, p6_4],
     description: 'ShareEZ is a secure, anonymous file-sharing app I built during my internship at CodeClause. Users can upload files without signing in, generate customizable passwords, and set optional expiry dates for links. The app creates a secure shareable link and password to control access, all wrapped in a simple, user-friendly interface with a dark theme.',
     links: [
       { label: 'GitHub Link', url: 'https://github.com/Darshanh20/CodeClauseInternship_File-Sharing-Platform' },
@@ -28,7 +52,7 @@ const PROJECTS = [
     id: 2,
     title: 'MoneyLog',
     type: 'group',
-    images: ['p1(1).png', 'p1(2).png', 'p1(3).png', 'p1(4).png'],
+    images: [p1_1, p1_2, p1_3, p1_4],
     description: 'MONEYLOG is a smart expense-tracking application designed to simplify financial management. Managing expenses can be tedious and stressful, so MONEYLOG provides an intuitive and efficient solution to track spending, categorize transactions, and gain insights into financial habits.',
     links: [
       { label: 'GitHub Link', url: 'https://github.com/rajank18/SGP_S4' }
@@ -38,7 +62,7 @@ const PROJECTS = [
     id: 3,
     title: 'Brief - The Ultimate Resume Builder',
     type: 'individual',
-    images: ['p7(1).png', 'p7(2).png', 'p7(3).png', 'p7(4).png'],
+    images: [p7_1, p7_2, p7_3, p7_4],
     description: 'The Ultimate Resume Builder is a sleek and user-friendly web application I developed for my portfolio. It allows users to create professional resumes with ease, using customizable templates and real-time previews. Built with React and Supabase, the platform supports secure authentication, dynamic form inputs, and downloadable image resumes.',
     links: [
       { label: 'GitHub Link', url: 'https://github.com/Darshanh20/CodeClauseInternship_Interactive-Resume-Builder' },
@@ -49,7 +73,7 @@ const PROJECTS = [
     id: 4,
     title: 'Vaccine Care',
     type: 'group',
-    images: ['p3(1).png', 'p3(2).png', 'p3(2).png', 'p3(2).png'],
+    images: [p3_1, p3_2, p3_2, p3_2],
     description: 'Vaccine Care is a healthcare application designed to help users track vaccinations, schedule appointments, and access vaccine-related information. The app ensures a seamless and user-friendly experience for individuals managing their immunization records.',
     links: [
       { label: 'GitHub Link', url: 'https://github.com/rajank18/VaccineCare' }
@@ -59,7 +83,7 @@ const PROJECTS = [
     id: 5,
     title: 'Design Experiments',
     type: 'individual',
-    images: ['p4(1).png', 'p4(2).png', 'p4(3).png', 'p2(4).png'],
+    images: [p4_1, p4_2, p4_3, p2_4],
     description: 'A collection of mini-projects and concept designs I created while learning UI/UX and front-end development. These projects helped me explore layouts, navigation patterns, visual hierarchy, and responsiveness. Each one reflects hands-on learning and creative problem-solving through tools like Figma, HTML/CSS, and JavaScript.',
     links: [
       { label: 'PDF', url: 'https://drive.google.com/file/d/1Y0XqZUtjf6-n6rUBCOSX1HTLO9Qo55AQ/view?usp=drive_link' }
@@ -69,7 +93,7 @@ const PROJECTS = [
     id: 6,
     title: 'TRAVELSY',
     type: 'group',
-    images: ['p5(1).png', 'p5(2).png', 'p5(2).png', 'p5(2).png'],
+    images: [p5_1, p5_2, p5_2, p5_2],
     description: 'TRAVELSY is a web-based platform designed as a one-stop solution for travelers, built for the SIH Hackathon. The website allows users to book tickets, view travel photos, explore locations, and find travel-related information in one place.',
     links: [
       { label: 'GitHub Link', url: 'https://github.com/rajank18/Travelsy' }
@@ -104,9 +128,9 @@ export default function ProjectsSection() {
               {project.images.map((img, idx) => (
                 <img 
                   key={idx} 
-                  src={`/src/assets/${img}`} 
+                  src={img} 
                   alt={`${project.title} ${idx + 1}`}
-                  onClick={() => handleImageClick(`/src/assets/${img}`, project.title)}
+                  onClick={() => handleImageClick(img, project.title)}
                 />
               ))}
             </div>

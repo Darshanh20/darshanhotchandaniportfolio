@@ -1,5 +1,18 @@
 import { motion } from 'framer-motion'
 import './SkillsSection.css'
+import htmlIcon from '../Assets/html.png'
+import cssIcon from '../Assets/css.png'
+import jsIcon from '../Assets/js.png'
+import reactIcon from '../Assets/react.png'
+import tailwindIcon from '../Assets/tailwind.png'
+import nodejsIcon from '../Assets/nodejs.png'
+import supabaseIcon from '../Assets/Supabase.png'
+import mysqlIcon from '../Assets/Mysql.png'
+import postgresqlIcon from '../Assets/postgresql.png'
+import figmaIcon from '../Assets/figma.png'
+import pythonIcon from '../Assets/python.png'
+import cppIcon from '../Assets/cpp.png'
+import githubIcon from '../Assets/github.jpg'
 
 const SkillCard = ({ skill, index }) => (
   <motion.div
@@ -11,7 +24,7 @@ const SkillCard = ({ skill, index }) => (
   >
     <div className="skill-card">
       <div className="skill-icon">
-        <img src={`/src/assets/${skill.icon}`} alt={skill.name} />
+        <img src={skill.icon} alt={skill.name} />
       </div>
       <h3>{skill.name}</h3>
     </div>
@@ -33,34 +46,34 @@ const SKILL_CATEGORIES = [
   {
     category: 'Frontend',
     skills: [
-      { name: 'HTML', icon: 'html.png' },
-      { name: 'CSS', icon: 'css.png' },
-      { name: 'JavaScript', icon: 'js.png' },
-      { name: 'React', icon: 'react.png' },
-      { name: 'Tailwind', icon: 'tailwind.png' },
+      { name: 'HTML', icon: htmlIcon },
+      { name: 'CSS', icon: cssIcon },
+      { name: 'JavaScript', icon: jsIcon },
+      { name: 'React', icon: reactIcon },
+      { name: 'Tailwind', icon: tailwindIcon },
     ]
   },
   {
     category: 'Backend & Databases',
     skills: [
-      { name: 'Node.js', icon: 'nodejs.png' },
-      { name: 'Supabase', icon: 'Supabase.png' },
-      { name: 'MySQL', icon: 'Mysql.png' },
-      { name: 'PostgreSQL', icon: 'postgresql.png' },
+      { name: 'Node.js', icon: nodejsIcon },
+      { name: 'Supabase', icon: supabaseIcon },
+      { name: 'MySQL', icon: mysqlIcon },
+      { name: 'PostgreSQL', icon: postgresqlIcon },
     ]
   },
   {
     category: 'Design',
     skills: [
-      { name: 'Figma', icon: 'figma.png' },
+      { name: 'Figma', icon: figmaIcon },
     ]
   },
   {
     category: 'Other Skills',
     skills: [
-      { name: 'Python', icon: 'python.png' },
-      { name: 'C++', icon: 'cpp.png' },
-      { name: 'GitHub', icon: 'github.jpg' },
+      { name: 'Python', icon: pythonIcon },
+      { name: 'C++', icon: cppIcon },
+      { name: 'GitHub', icon: githubIcon },
     ]
   }
 ]
