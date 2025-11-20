@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion'
 import JourneyCard from './JourneyCard'
+import schoolIcon from '../Assets/school.jpg'
+import collegeIcon from '../Assets/college.jpeg'
+import codeclauseIcon from '../Assets/codeclause.jpeg'
 
 // Journey data with all milestone information
 const JOURNEY_DATA = [
@@ -8,7 +11,7 @@ const JOURNEY_DATA = [
     title: "Bhartiya Vidya Bhavan's",
     period: '2011-2023',
     description: 'Completed my foundational education here, where I developed core academic skills and built a strong base in mathematics, science, and technology. Also participated in various co-curricular activities that nurtured my interest in computers and problem-solving.',
-    icon: 'school.jpg',
+    icon: schoolIcon,
     position: 'left',
     color: 'from-blue-500 to-blue-600'
   },
@@ -17,7 +20,7 @@ const JOURNEY_DATA = [
     title: 'Charotar University of Science and Technology',
     period: 'B.Tech in Information Technology, 2023 - 2027',
     description: 'Currently pursuing a B.Tech in Information Technology at Charotar University of Science and Technology (2023-2027), where I\'ve built a strong foundation in computer science, software engineering, and full-stack development.',
-    icon: 'college.jpeg',
+    icon: collegeIcon,
     position: 'right',
     color: 'from-cyan-500 to-cyan-600'
   },
@@ -26,7 +29,7 @@ const JOURNEY_DATA = [
     title: 'CodeClause - Web Development Intern',
     period: 'May 2025 - June 2025',
     description: 'Currently interning as a Web Developer at CodeClause, building real-world projects like a secure, no-login file-sharing platform using React, Supabase, and Netlify — integrating seamless UI with robust backend logic.',
-    icon: 'codeclause.jpeg',
+    icon: codeclauseIcon,
     position: 'left',
     color: 'from-orange-500 to-orange-600'
   }

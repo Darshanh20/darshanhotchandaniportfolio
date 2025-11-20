@@ -29,7 +29,7 @@ const JourneyCard = ({ item }) => {
           >
             <div className="w-full h-full bg-gray-900 rounded-[10px] flex items-center justify-center overflow-hidden">
               <img
-                src={`/src/assets/${item.icon}`}
+                src={item.icon}
                 alt={item.title}
                 className="w-full h-full object-cover"
               />

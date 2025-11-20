@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import './ContactSection.css'
+import githubIcon from '../Assets/github.jpg'
+import linkedinIcon from '../Assets/Linkedin.png'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -121,10 +123,10 @@ export default function ContactSection() {
       <div className="socials">
         <div className="socials-row">
           <a href="https://github.com/Darshanh20" target="_blank" rel="noopener noreferrer">
-            <img src="/src/assets/github.jpg" alt="GitHub" className="social-icon" />
+            <img src={githubIcon} alt="GitHub" className="social-icon" />
           </a>
           <a href="https://www.linkedin.com/in/darshan-hotchandani-497b7b31a/" target="_blank" rel="noopener noreferrer">
-            <img src="/src/assets/Linkedin.png" alt="LinkedIn" className="social-icon" />
+            <img src={linkedinIcon} alt="LinkedIn" className="social-icon" />
           </a>
         </div>
       </div>
