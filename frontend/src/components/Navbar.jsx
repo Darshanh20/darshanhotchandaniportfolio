@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Navbar.css'
-import resumePDF from '../assets/resume.pdf'
+import resumePDF from '../Assets/resume.pdf'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
