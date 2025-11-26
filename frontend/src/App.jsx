@@ -12,23 +12,18 @@ function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-24 sm:pt-20">
         <HeroSection />
-        <div className="section-divider"></div>
         <SkillsSection />
-        <div className="section-divider"></div>
         <div id="journey">
           <JourneySection />
         </div>
-        <div className="section-divider"></div>
         <div id="projects">
           <ProjectsSection />
         </div>
-        <div className="section-divider"></div>
         <div id="aboutme">
           <AboutSection />
         </div>
-        <div className="section-divider"></div>
         <div id="connectme">
           <ContactSection />
         </div>
