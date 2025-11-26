@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import resumePDF from '../Assets/resume.pdf'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const navigate = useNavigate()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -21,6 +23,11 @@ export default function Navbar() {
 
   const handleResumeClick = () => {
     window.open(resumePDF, '_blank')
+    closeMenu()
+  }
+
+  const handleGithubClick = () => {
+    navigate('/insights')
     closeMenu()
   }
 
@@ -56,6 +63,7 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
+    { id: 'github', label: 'GitHub Insights', onClick: handleGithubClick, isButton: true },
     { id: 'resume', label: 'Resume', onClick: handleResumeClick, isButton: true },
     { id: 'projects', label: 'Projects', href: '#projects' },
     { id: 'aboutme', label: 'About Me', href: '#aboutme' },

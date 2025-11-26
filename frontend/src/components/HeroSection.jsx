@@ -206,18 +206,6 @@ export default function HeroSection() {
           <HeroImage src={meImage} alt="Darshan Hotchandani" />
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="hero-scroll-indicator"
-      >
-        <span>Scroll to explore</span>
-        <svg className="scroll-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M10 4v10M10 14l-4-4M10 14l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      </motion.div>
     </motion.section>
   )
 }
