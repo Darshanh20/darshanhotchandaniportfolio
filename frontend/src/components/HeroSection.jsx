@@ -175,7 +175,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="hero-cta-group"
           >
-            <CTAButton label="Let's Connect" href="#contact" variant="primary" />
+            <CTAButton label="Let's Connect" href="#connectme" variant="primary" />
             <CTAButton label="View My Work" href="#projects" variant="secondary" />
           </motion.div>
 

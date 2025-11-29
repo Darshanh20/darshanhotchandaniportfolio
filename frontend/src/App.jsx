@@ -13,39 +13,38 @@ import AnimatedBackground from './components/AnimatedBackground'
 import InsightsPage from './pages/InsightsPage'
 import './App.css'
 
-function HomePage() {
-  return (
-    <>
-      <AnimatedBackground />
-      <Navbar />
-      <main className="pt-24 sm:pt-20">
-        <HeroSection />
-        <SkillsSection />
-        <TechStackGraph />
-        <div id="journey">
-          <JourneySection />
-        </div>
-        <div id="projects">
-          <ProjectsSection />
-        </div>
-        <div id="aboutme">
-          <AboutSection />
-        </div>
-        <div id="connectme">
-          <ContactSection />
-        </div>
-        <SoftSkillsAndFunFactsSection />
-      </main>
-      <Footer />
-    </>
-  )
-}
-
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <AnimatedBackground />
+              <Navbar />
+              <main className="pt-24 sm:pt-20">
+                <HeroSection />
+                <SkillsSection />
+                <TechStackGraph />
+                <div id="journey">
+                  <JourneySection />
+                </div>
+                <div id="projects">
+                  <ProjectsSection />
+                </div>
+                <div id="aboutme">
+                  <AboutSection />
+                </div>
+                <div id="connectme">
+                  <ContactSection />
+                </div>
+                <SoftSkillsAndFunFactsSection />
+              </main>
+              <Footer />
+            </>
+          }
+        />
         <Route path="/insights" element={<InsightsPage />} />
       </Routes>
     </BrowserRouter>
