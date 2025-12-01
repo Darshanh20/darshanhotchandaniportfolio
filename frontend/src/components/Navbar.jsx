@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import resumePDF from '@assets/Resume.pdf'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +21,7 @@ export default function Navbar() {
   }
 
   const handleResumeClick = () => {
-    window.open(resumePDF, '_blank')
+    window.open('/Resume.pdf', '_blank')
     closeMenu()
   }
 
