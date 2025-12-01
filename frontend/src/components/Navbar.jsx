@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import resumePDF from '../Assets/resume.pdf'
+import resumePDF from '../Assets/Resume.pdf'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)

@@ -1,53 +1,92 @@
-# Darshan Hotchandani - Full Stack Portfolio Website
+# Full Stack Portfolio Website Template
 
-A modern, full-stack portfolio website built with **React (Vite)** frontend and **Node.js/Express** backend.
+A modern, professional full-stack portfolio website template built with **React (Vite)** frontend and **Node.js/Express** backend. Perfect for developers, designers, and creative professionals to showcase their work.
+
+## ✨ Features
+
+- ✅ Responsive modern design (mobile, tablet, desktop)
+- ✅ Smooth animations with Framer Motion
+- ✅ Dark mode with premium glassmorphism UI
+- ✅ GitHub Insights integration with live stats
+- ✅ Contact form with email notifications
+- ✅ Tech stack visualization with charts
+- ✅ Timeline/Journey section for experience
+- ✅ Projects showcase with modal previews
+- ✅ SEO optimized
+- ✅ Production-ready deployment setup
 
 ## 📁 Project Structure
 
 ```
 portfolio-website/
-├── frontend/              # React application
+├── frontend/                    # React Vite application
 │   ├── src/
-│   │   ├── components/    # Reusable React components
-│   │   ├── pages/         # Page components
-│   │   ├── App.jsx        # Main app component
-│   │   └── index.css      # Global styles
-│   ├── index.html         # HTML entry point
-│   ├── vite.config.js     # Vite configuration
-│   └── package.json       # Frontend dependencies
+│   │   ├── components/          # Reusable React components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── HeroSection.jsx
+│   │   │   ├── SkillsSection.jsx
+│   │   │   ├── TechStackGraph.jsx
+│   │   │   ├── ProjectsSection.jsx
+│   │   │   ├── AboutSection.jsx
+│   │   │   ├── SoftSkillsAndFunFactsSection.jsx
+│   │   │   ├── ContactSection.jsx
+│   │   │   ├── AnimatedBackground.jsx
+│   │   │   └── ...
+│   │   ├── hooks/               # Custom React hooks
+│   │   │   └── useGithubStats.js
+│   │   ├── pages/               # Page components
+│   │   ├── Assets/              # Images and media files
+│   │   ├── App.jsx              # Main app with routing
+│   │   ├── index.css            # Global styles
+│   │   └── main.jsx             # React entry point
+│   ├── public/                  # Static files
+│   ├── index.html               # HTML template
+│   ├── vite.config.js           # Vite configuration
+│   ├── tailwind.config.js       # Tailwind CSS config
+│   ├── .env                     # Environment variables
+│   └── package.json             # Frontend dependencies
 │
-├── backend/               # Express.js server
+├── backend/                     # Express.js server
 │   ├── src/
-│   │   ├── config/        # Configuration
-│   │   ├── controllers/   # Route handlers
-│   │   ├── middleware/    # Express middleware
-│   │   ├── routes/        # API routes
-│   │   ├── utils/         # Utility functions
-│   │   └── server.js      # Main server file
-│   ├── .env.example       # Example environment variables
-│   └── package.json       # Backend dependencies
+│   │   ├── config/              # Configuration files
+│   │   ├── controllers/         # Route handlers
+│   │   ├── middleware/          # Express middleware (CORS, error handling)
+│   │   ├── routes/              # API routes
+│   │   ├── utils/               # Utility functions (email, validators)
+│   │   └── server.js            # Main server file
+│   ├── .env.example             # Example environment variables
+│   ├── .env                     # Environment variables
+│   ├── package.json             # Backend dependencies
+│   └── vercel.json              # Vercel deployment config
 │
-├── Assets/                # Shared assets (images, files)
-├── style.css              # Old portfolio CSS (reference)
-├── index.html             # Old portfolio HTML (reference)
-└── README.md              # This file
+├── deploy.sh                    # Deployment script
+├── vercel.json                  # Root vercel config
+└── README.md                    # This file
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js v14+ and npm
-- Git
+- **Node.js** v14+ and npm v6+
+- **Git**
+- A code editor (VS Code recommended)
 
-### Installation
+### 1. Clone the Repository
 
-1. **Clone and install frontend:**
+```bash
+git clone <repository-url>
+cd portfolio-website
+```
+
+### 2. Install Dependencies
+
+**Frontend:**
 ```bash
 cd frontend
 npm install
 ```
 
-2. **Clone and install backend:**
+**Backend:**
 ```bash
 cd backend
 npm install
@@ -55,310 +94,375 @@ npm install
 
 ## 🎨 Frontend Setup
 
-### Running the Frontend
+### Environment Variables
 
-**Development Mode:**
+Create `frontend/.env`:
+```env
+VITE_API_URL=http://localhost:5000
+VITE_MY_USERNAME=your_github_username
+```
+
+### Running Development Server
+
 ```bash
 cd frontend
 npm run dev
 ```
-Opens at `http://localhost:3000`
+Opens at `http://localhost:5173`
 
-**Build for Production:**
+### Build for Production
+
 ```bash
 cd frontend
 npm run build
 ```
 
-### Project Components
+Output: `frontend/dist/`
 
-#### Pages
-- **Home** (`src/pages/Home.jsx`) - Hero section, skills, and journey
-- **About** (`src/pages/About.jsx`) - About Me section
-- **Projects** (`src/pages/Projects.jsx`) - Portfolio projects showcase
-- **Contact** (`src/pages/Contact.jsx`) - Contact form and social links
+### Key Technologies
 
-#### Components
-- **Navbar** - Navigation with mobile hamburger menu
-- **Footer** - Footer with copyright
-- **HeroSection** - Developer and Designer intro
-- **SkillsSection** - Technology skills with levels
-- **JourneySection** - Education and experience timeline
-- **ProjectsSection** - Project showcase with images
-- **AboutSection** - About me text
-- **ContactSection** - Contact form with backend integration
-
-### CSS Organization
-
-Each component has its own CSS file (`ComponentName.css`) for modular styling. Global styles are in `src/index.css`.
-
-### Using Your Assets
-
-Copy your images from the `Assets/` folder to `frontend/src/assets/`:
-```bash
-# Copy all asset files
-cp -r ../Assets/* ./src/assets/
-```
+- **React 18** - UI library
+- **Vite** - Build tool & dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **React Router** - Client-side routing
+- **Recharts** - Data visualization
+- **GitHub REST API** - Live GitHub stats
 
 ## 🔧 Backend Setup
 
-### Running the Backend
-
-**Development Mode (with auto-reload):**
-```bash
-cd backend
-npm run dev
-```
-
-**Production Mode:**
-```bash
-cd backend
-npm start
-```
-Server runs on `http://localhost:5000`
-
 ### Environment Variables
 
-Create a `.env` file in the backend folder (copy from `.env.example`):
-
+Create `backend/.env`:
 ```env
 PORT=5000
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
 
-# Gmail SMTP Configuration (Optional)
+# Email Configuration (Gmail SMTP)
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your_email@gmail.com
 SMTP_PASS=your_app_password
-ADMIN_EMAIL=your_email@gmail.com
-
-# Database (Future use)
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=password
-DB_NAME=portfolio
+ADMIN_EMAIL=admin@example.com
 ```
 
-### Setting Up Gmail for Emails
+### Gmail Setup for Email
 
-1. Enable 2-Step Verification on [Google Account](https://myaccount.google.com/)
-2. Generate an [App Password](https://myaccount.google.com/apppasswords)
-3. Use the app password in `.env`
+1. Go to [Google Account Settings](https://myaccount.google.com/)
+2. Enable **2-Step Verification**
+3. Generate [App Password](https://myaccount.google.com/apppasswords)
+4. Use app password in `SMTP_PASS`
 
-### API Endpoints
+### Running Development Server
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/health` | Server health check |
-| `POST` | `/api/contact` | Submit contact form |
-
-**Contact Form Request:**
-```json
-{
-  "name": "Your Name",
-  "email": "your.email@example.com",
-  "message": "Your message here"
-}
-```
-
-## 🔗 Frontend-Backend Connection
-
-### Proxy Configuration (Development)
-
-The frontend is configured to proxy API requests to the backend in `vite.config.js`:
-```javascript
-proxy: {
-  '/api': {
-    target: 'http://localhost:5000',
-    changeOrigin: true,
-    rewrite: (path) => path.replace(/^\/api/, '')
-  }
-}
-```
-
-This means you can call `/api/contact` from the frontend, and it will forward to `http://localhost:5000/contact`.
-
-### Direct API Calls (Production)
-
-In production, update the API URL in your `.env`:
-```env
-VITE_API_URL=https://your-backend-domain.com
-```
-
-Access it in your components:
-```javascript
-const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000'
-const response = await fetch(`${apiUrl}/api/contact`, { ... })
-```
-
-## 🌐 Running Both Frontend and Backend
-
-### Option 1: Two Terminal Windows
-
-**Terminal 1 - Frontend:**
-```bash
-cd frontend
-npm run dev
-```
-
-**Terminal 2 - Backend:**
 ```bash
 cd backend
 npm run dev
 ```
+Server runs on `http://localhost:5000`
 
-### Option 2: Concurrently (Recommended)
+### API Endpoints
 
-Install `concurrently`:
+| Method | Endpoint | Description | Body |
+|--------|----------|-------------|------|
+| `GET` | `/api/health` | Health check | - |
+| `POST` | `/api/contact` | Submit contact form | `{ name, email, message }` |
+
+## 🎯 Customization Guide
+
+### 1. Update Personal Information
+
+**Navbar & Logo:**
+- Edit `frontend/src/components/Navbar.jsx`
+- Update name, resume link, and navigation
+
+**Hero Section:**
+- Edit `frontend/src/components/HeroSection.jsx`
+- Change your title, tagline, and add your image
+
+**About Section:**
+- Edit `frontend/src/components/AboutSection.jsx`
+- Write your bio and background
+
+**Contact Info:**
+- Edit `frontend/src/components/ContactSection.jsx`
+- Update email, phone, and social links
+
+### 2. Update Projects
+
+Edit `frontend/src/components/ProjectsSection.jsx`:
+```javascript
+const PROJECTS = [
+  {
+    id: 1,
+    title: 'Your Project Name',
+    description: 'Project description',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    image: projectImage,
+    github: 'https://github.com/yourname/project',
+    live: 'https://project-live.com',
+    features: ['Feature 1', 'Feature 2']
+  },
+  // Add more projects
+]
+```
+
+### 3. Update Skills
+
+Edit `frontend/src/components/SkillsSection.jsx`:
+```javascript
+const SKILLS = {
+  'Frontend': ['React', 'Tailwind CSS', 'JavaScript', ...],
+  'Backend': ['Node.js', 'Express', 'MongoDB', ...],
+  'Tools': ['Git', 'VS Code', 'Figma', ...],
+}
+```
+
+### 4. Update Experience/Journey
+
+Edit `frontend/src/components/JourneySection.jsx`:
+```javascript
+const JOURNEY_ITEMS = [
+  {
+    title: 'Job Title',
+    organization: 'Company Name',
+    period: '2023 - Present',
+    description: 'What you did...',
+    icon: '💼'
+  },
+  // Add more items
+]
+```
+
+### 5. Update Tech Stack
+
+Edit `frontend/src/components/TechStackGraph.jsx`:
+- Modify data structure to show your preferred technologies
+- Colors are auto-assigned by category (Frontend/Backend/Database)
+
+### 6. Update Soft Skills & Fun Facts
+
+Edit `frontend/src/components/SoftSkillsAndFunFactsSection.jsx`:
+```javascript
+const softSkills = [
+  { icon: '💬', skill: 'Communication' },
+  // Add your soft skills
+]
+
+const funFacts = [
+  { icon: '🎤', fact: 'Fun fact about yourself' },
+  // Add fun facts
+]
+```
+
+### 7. Add Your GitHub Username
+
+Update `frontend/.env`:
+```env
+VITE_MY_USERNAME=your_actual_github_username
+```
+
+This enables live GitHub stats on the GitHub Insights page.
+
+## 🌐 Running Both Frontend & Backend
+
+### Option 1: Two Terminal Windows
+
+**Terminal 1:**
+```bash
+cd frontend && npm run dev
+```
+
+**Terminal 2:**
+```bash
+cd backend && npm run dev
+```
+
+### Option 2: Using Concurrently
+
+Install globally:
 ```bash
 npm install -g concurrently
 ```
 
-Create a script at the root:
+From root directory:
 ```bash
 concurrently "cd frontend && npm run dev" "cd backend && npm run dev"
 ```
 
 ## 📤 Deployment
 
-### Frontend Deployment (Vercel)
+### Frontend - Vercel (Recommended)
 
-1. **Create Vercel Account** - [vercel.com](https://vercel.com)
-2. **Connect GitHub Repository**
-3. **Configure Build Settings:**
+1. **Create account** at [vercel.com](https://vercel.com)
+2. **Import project** from GitHub
+3. **Configure:**
+   - Framework: Vite
    - Build Command: `npm run build`
    - Output Directory: `dist`
-4. **Add Environment Variables:**
+4. **Environment Variables:**
    ```
-   VITE_API_URL=https://your-backend-domain.com
+   VITE_API_URL=your_backend_url
+   VITE_MY_USERNAME=your_github_username
    ```
-5. **Deploy** - Automatic on push to main branch
+5. **Deploy** - Auto-deploys on push to main
 
-### Backend Deployment (Render)
+### Backend - Render.com
 
-1. **Create Render Account** - [render.com](https://render.com)
-2. **New Web Service**
+1. **Create account** at [render.com](https://render.com)
+2. **New > Web Service**
 3. **Connect GitHub Repository**
 4. **Configure:**
-   - Build Command: `npm install`
-   - Start Command: `npm start`
-5. **Add Environment Variables** from `.env`
-6. **Deploy**
+   - Build: `npm install`
+   - Start: `npm start`
+5. **Environment Variables:** Add all from `.env`
+6. **Create Service**
 
-### Backend Deployment (Railway)
+### Backend - Railway.app
 
-1. **Go to [railway.app](https://railway.app)**
-2. **New Project > GitHub Repo**
+1. **Go to** [railway.app](https://railway.app)
+2. **New Project > Deploy from GitHub**
 3. **Add Variables** from `.env`
-4. **Deploy Automatically**
+4. **Auto-deploys** from main branch
 
-### Connect Frontend to Deployed Backend
+### Update Frontend After Backend Deploy
 
-After deploying backend, update frontend `.env`:
+After deploying backend, update `frontend/.env`:
 ```env
-VITE_API_URL=https://your-backend-service.onrender.com
+VITE_API_URL=https://your-backend-url.onrender.com
 ```
 
-Redeploy frontend with new API URL.
+Push to redeploy frontend with new URL.
 
-## 🛠️ Customization Guide
+## 🎨 Styling & Customization
 
-### Adding Your Content
+### Color Scheme
 
-#### Update Profile Information
-- Edit `src/components/Navbar.jsx` - Change name and links
-- Edit `src/components/AboutSection.jsx` - Update about text
-- Edit `src/components/ContactSection.jsx` - Update contact info
+Edit `frontend/src/index.css` for global colors:
+- Primary: `#0dd8ff` (Cyan)
+- Secondary: `#1e78b4` (Blue)
+- Background: `#0a0a0f` (Very Dark Blue)
 
-#### Update Projects
-- Edit `src/components/ProjectsSection.jsx` - Modify PROJECTS array
+### Tailwind Colors
 
-#### Update Skills
-- Edit `src/components/SkillsSection.jsx` - Modify SKILLS object
+All components use Tailwind CSS (`frontend/tailwind.config.js`):
+- Modify theme colors for site-wide changes
+- Use Tailwind utilities in JSX (e.g., `text-cyan-300`)
 
-#### Update Journey
-- Edit `src/components/JourneySection.jsx` - Modify JOURNEY_ITEMS array
+### Animations
 
-#### Update Resume Link
-1. Place your resume PDF in `public/resume.pdf`
-2. Update link in `src/components/Navbar.jsx`
+- **Framer Motion** handles component animations
+- **CSS keyframes** in AnimatedBackground
+- Edit animation timings in component files
 
-### Styling Changes
-
-- **Global Colors:** Edit `src/index.css`
-- **Component Colors:** Edit respective `.css` files
-- **Theme:** Search for cyan (`#0ff`) and orange (`#FFA500`) hex codes
-
-### Adding New Components
-
-1. Create `src/components/NewComponent.jsx`
-2. Create `src/components/NewComponent.css`
-3. Import and use in pages
-
-## 🔐 Security Notes
+## 🔐 Security
 
 - Never commit `.env` files (use `.env.example`)
-- Validate all user inputs on backend
+- Validate all inputs on backend
 - Use HTTPS in production
-- Implement rate limiting for API endpoints (future enhancement)
+- Implement rate limiting on API endpoints
+- Sanitize email inputs before sending
 
-## 📋 Checklist Before Going Live
+## 🧪 Testing
 
-- [ ] Update portfolio content and images
-- [ ] Set up email (SMTP credentials)
-- [ ] Deploy frontend to Vercel
-- [ ] Deploy backend to Render/Railway
-- [ ] Update `VITE_API_URL` in frontend `.env`
-- [ ] Test contact form
+### Frontend
+```bash
+cd frontend
+npm run build  # Test production build
+npm run preview  # Preview production build
+```
+
+### Backend
+```bash
+cd backend
+npm run dev  # Development with auto-reload
+npm start  # Production mode
+```
+
+## 📋 Pre-Deployment Checklist
+
+- [ ] Update all personal information
+- [ ] Add projects with descriptions and links
+- [ ] Set GitHub username for GitHub Insights
+- [ ] Configure email (SMTP settings)
+- [ ] Test contact form locally
 - [ ] Test mobile responsiveness
-- [ ] Set up custom domain
-- [ ] Enable HTTPS
-- [ ] Remove old HTML/CSS files from root
+- [ ] Build frontend: `npm run build`
+- [ ] Deploy backend (Render/Railway)
+- [ ] Deploy frontend (Vercel)
+- [ ] Test live contact form
+- [ ] Set up custom domain (optional)
 
 ## 🐛 Troubleshooting
 
-### Frontend won't connect to backend
-- Check CORS configuration in `backend/src/middleware/corsMiddleware.js`
+### Frontend won't load
+- Check browser console for errors
+- Verify `VITE_API_URL` is correct
+- Clear browser cache
+
+### Backend API not responding
+- Verify backend is running: `http://localhost:5000/api/health`
+- Check CORS settings in `backend/src/middleware/corsMiddleware.js`
 - Verify `FRONTEND_URL` in backend `.env`
-- Check that backend is running on port 5000
 
-### Contact form not sending emails
-- Verify SMTP credentials in `.env`
-- Check Gmail app password setup
-- Verify `ADMIN_EMAIL` is set correctly
+### Contact form not sending
+- Check SMTP credentials in backend `.env`
+- Verify Gmail app password is correct
+- Check backend console for errors
+- Ensure `ADMIN_EMAIL` is set
 
-### Assets not loading
-- Copy images from `Assets/` to `frontend/src/assets/`
-- Update image paths in components if needed
+### GitHub Insights not loading
+- Verify `VITE_MY_USERNAME` in frontend `.env`
+- Check GitHub API rate limits (60 requests/hour for unauthenticated)
+- Username is case-sensitive
 
 ### Port conflicts
 ```bash
-# Find and kill process on port 3000 or 5000
+# Check what's using port 3000
 lsof -i :3000
+
+# Kill the process
 kill -9 <PID>
 ```
 
+## 🚀 Performance Tips
+
+- Use lazy loading for images
+- Optimize image sizes (use tools like TinyPNG)
+- Enable gzip compression in backend
+- Use CDN for static assets
+- Minimize bundle size: `npm run build --report`
+
 ## 📚 Resources
 
-- [React Documentation](https://react.dev)
+- [React Docs](https://react.dev)
 - [Vite Guide](https://vitejs.dev)
-- [Express.js Guide](https://expressjs.com)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Framer Motion](https://www.framer.com/motion)
+- [Express.js](https://expressjs.com)
 - [React Router](https://reactrouter.com)
 - [Nodemailer](https://nodemailer.com)
 
 ## 📝 License
 
-MIT License
+MIT License - Feel free to use this template for your portfolio!
 
-## 👤 Author
+## 🤝 Contributing
 
-Darshan Hotchandani
+To improve this template:
+1. Fork the repository
+2. Create a feature branch
+3. Make your improvements
+4. Submit a pull request
 
-- GitHub: [@Darshanh20](https://github.com/Darshanh20)
-- LinkedIn: [Darshan Hotchandani](https://www.linkedin.com/in/darshan-hotchandani-497b7b31a/)
+## 📧 Support
+
+If you encounter issues:
+1. Check the troubleshooting section
+2. Review the GitHub issues
+3. Create a new issue with details
 
 ---
 
-**Happy coding! 🚀**
+**Built with ❤️ - Start building your portfolio today! 🚀**
