@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
+import githubIcon from '@assets/github.jpg'
+import linkedinIcon from '@assets/Linkedin.png'
 import './ContactSection.css'
-import githubIcon from '../Assets/github.jpg'
-import linkedinIcon from '../Assets/Linkedin.png'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({

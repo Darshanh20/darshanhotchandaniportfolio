@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
-import { useGithubStats } from '../../hooks/useGithubStats'
+import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { useGithubStats } from '@hooks/useGithubStats'
 
 const LANGUAGE_COLORS = {
   JavaScript: '#f7df1e',

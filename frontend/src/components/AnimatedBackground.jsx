@@ -43,19 +43,29 @@ export default function AnimatedBackground() {
       const fontSize = Math.min(width * 0.2, height * 0.2)
 
       // Main glow effect
-      ctx.shadowColor = 'rgba(0, 213, 255, 0.2)'
       ctx.shadowBlur = 25
       ctx.fillStyle = 'rgba(0, 150, 200, 0.06)'
       ctx.font = `bold ${fontSize}px 'Segoe UI', sans-serif`
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
-      ctx.fillText('DH', centerX, centerY)
 
-      // Subtle secondary glow for depth
-      ctx.shadowColor = 'rgba(30, 120, 180, 0.1)'
+      // Line 1: DARSHAN
+      ctx.fillText('DARSHAN', centerX, centerY - fontSize * 0.6)
+
+      // Line 2: HOTCHANDANI
+      ctx.fillText('HOTCHANDANI', centerX, centerY + fontSize * 0.6)
+
+
+      // Secondary glow layer
       ctx.shadowBlur = 40
       ctx.fillStyle = 'rgba(0, 150, 200, 0.04)'
-      ctx.fillText('DH', centerX, centerY)
+
+      // Line 1 glow
+      ctx.fillText('DARSHAN', centerX, centerY - fontSize * 0.6)
+
+      // Line 2 glow
+      ctx.fillText('HOTCHANDANI', centerX, centerY + fontSize * 0.6)
+
 
       ctx.shadowColor = 'transparent'
 

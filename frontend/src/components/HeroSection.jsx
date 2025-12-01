@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import './HeroSection.css'
 import { useState, useEffect } from 'react'
-import meImage from '../Assets/me.png'
+import meImage from '@assets/me.png'
+import './HeroSection.css'
 
 /**
  * HeroTitle Component

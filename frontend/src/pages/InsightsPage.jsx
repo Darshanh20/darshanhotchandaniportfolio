@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import GithubInsightsFull from '../components/insights/GithubInsightsFull'
+import GithubInsightsFull from '@components/insights/GithubInsightsFull'
 
 export default function InsightsPage() {
   const navigate = useNavigate()

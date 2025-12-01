@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
+import codeclauseIcon from '@assets/codeclause.jpeg'
+import collegeIcon from '@assets/college.jpeg'
+import schoolIcon from '@assets/school.jpg'
 import JourneyCard from './JourneyCard'
-import schoolIcon from '../Assets/school.jpg'
-import collegeIcon from '../Assets/college.jpeg'
-import codeclauseIcon from '../Assets/codeclause.jpeg'
 
 // Journey data with all milestone information
 const JOURNEY_DATA = [

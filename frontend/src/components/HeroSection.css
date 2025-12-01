@@ -115,7 +115,7 @@
   @apply bg-slate-900/50 border-slate-600;
   @apply text-slate-100;
   @apply hover:bg-slate-800/70 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30;
-  @apply backdrop-blur-sm;
+  @apply backdrop-blur-lg;
 }
 
 /* Stats section */
