@@ -3,12 +3,8 @@ import p1_1 from '@assets/p1(1).png'
 import p1_2 from '@assets/p1(2).png'
 import p1_3 from '@assets/p1(3).png'
 import p1_4 from '@assets/p1(4).png'
-import p2_4 from '@assets/p2(4).png'
 import p3_1 from '@assets/p3(1).png'
 import p3_2 from '@assets/p3(2).png'
-import p4_1 from '@assets/p4(1).png'
-import p4_2 from '@assets/p4(2).png'
-import p4_3 from '@assets/p4(3).png'
 import p5_1 from '@assets/p5(1).png'
 import p5_2 from '@assets/p5(2).png'
 import p6_1 from '@assets/p6(1).png'
@@ -23,19 +19,45 @@ import p8_1 from '@assets/p8(1).png'
 import p8_2 from '@assets/p8(2).png'
 import p8_3 from '@assets/p8(3).png'
 import p8_4 from '@assets/p8(4).png'
+import p9_1 from '@assets/p9(1).png'
+import p9_2 from '@assets/p9(2).png'
+import p9_3 from '@assets/p9(3).png'
+import p9_4 from '@assets/p9(4).png'
 import './ProjectsSection.css'
 
 const PROJECTS = [
-    {
-    id: 7,
-    title: 'ProGrade',
+  {
+    id: 2,
+    title: 'TRAVELSY',
     type: 'group',
-    images: [p8_1, p8_2, p8_3, p8_4],
-    description: 'ProGrade is a rubrics-based project evaluation system designed to streamline academic assessments. It allows faculty to create, customize, and apply structured rubrics for fair, consistent, and transparent project grading. With an intuitive interface built using React and Node.js, ProGrade simplifies evaluation workflows while improving accuracy. It bridges the gap between students and faculty by ensuring clarity, feedback, and organized result tracking.',
-    techStack: ['React', 'Node.js', 'Express', 'MySQL', 'Tailwind CSS'],
+    images: [p5_1, p5_2],
+    description: 'TRAVELSY is a web-based platform designed as a one-stop solution for travelers, built for the SIH Hackathon. The website allows users to book tickets, view travel photos, explore locations, and find travel-related information in one place.',
+    techStack: ['HTML5', 'CSS3', 'MySQL', 'Bootstrap'],
     links: [
-      { label: 'GitHub Link', url: 'https://github.com/rajank18/SGP_S5' },
-      { label: 'Use Here', url: 'https://pro-grade.vercel.app/' }
+      { label: 'GitHub Link', url: 'https://github.com/rajank18/Travelsy' }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Brief - The Ultimate Resume Builder',
+    type: 'individual',
+    images: [p7_1, p7_2, p7_3, p7_4],
+    description: 'The Ultimate Resume Builder is a sleek and user-friendly web application I developed for my portfolio. It allows users to create professional resumes with ease, using customizable templates and real-time previews. Built with React and Supabase, the platform supports secure authentication, dynamic form inputs, and downloadable image resumes.',
+    techStack: ['React', 'Supabase', 'JavaScript', 'Tailwind CSS'],
+    links: [
+      { label: 'GitHub Link', url: 'https://github.com/Darshanh20/CodeClauseInternship_Interactive-Resume-Builder' },
+      { label: 'Use Here', url: 'https://resumebuilderbrief.netlify.app/' }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Vaccine Care',
+    type: 'group',
+    images: [p3_1, p3_2],
+    description: 'Vaccine Care is a healthcare application designed to help users track vaccinations, schedule appointments, and access vaccine-related information. The app ensures a seamless and user-friendly experience for individuals managing their immunization records.',
+    techStack: ['Flutter', 'React', 'Node.js', 'Tailwind CSS','Supabase'],
+    links: [
+      { label: 'GitHub Link', url: 'https://github.com/rajank18/VaccineCare' }
     ]
   },
   {
@@ -62,51 +84,33 @@ const PROJECTS = [
     ]
   },
   {
-    id: 3,
-    title: 'Brief - The Ultimate Resume Builder',
-    type: 'individual',
-    images: [p7_1, p7_2, p7_3, p7_4],
-    description: 'The Ultimate Resume Builder is a sleek and user-friendly web application I developed for my portfolio. It allows users to create professional resumes with ease, using customizable templates and real-time previews. Built with React and Supabase, the platform supports secure authentication, dynamic form inputs, and downloadable image resumes.',
-    techStack: ['React', 'Supabase', 'JavaScript', 'Tailwind CSS'],
-    links: [
-      { label: 'GitHub Link', url: 'https://github.com/Darshanh20/CodeClauseInternship_Interactive-Resume-Builder' },
-      { label: 'Use Here', url: 'https://resumebuilderbrief.netlify.app/' }
-    ]
-  },
-  {
-    id: 4,
-    title: 'Vaccine Care',
+    id: 7,
+    title: 'ProGrade',
     type: 'group',
-    images: [p3_1, p3_2, p3_2, p3_2],
-    description: 'Vaccine Care is a healthcare application designed to help users track vaccinations, schedule appointments, and access vaccine-related information. The app ensures a seamless and user-friendly experience for individuals managing their immunization records.',
-    techStack: ['Flutter', 'React', 'Node.js', 'Tailwind CSS','Supabase'],
+    images: [p8_1, p8_2, p8_3, p8_4],
+    description: 'ProGrade is a rubrics-based project evaluation system designed to streamline academic assessments. It allows faculty to create, customize, and apply structured rubrics for fair, consistent, and transparent project grading. With an intuitive interface built using React and Node.js, ProGrade simplifies evaluation workflows while improving accuracy. It bridges the gap between students and faculty by ensuring clarity, feedback, and organized result tracking.',
+    techStack: ['React', 'Node.js', 'Express', 'MySQL', 'Tailwind CSS'],
     links: [
-      { label: 'GitHub Link', url: 'https://github.com/rajank18/VaccineCare' }
+      { label: 'GitHub Link', url: 'https://github.com/rajank18/SGP_S5' },
+      { label: 'Use Here', url: 'https://pro-grade.vercel.app/' }
     ]
   },
   {
-    id: 1,
-    title: 'Design Experiments',
-    type: 'individual',
-    images: [p4_1, p4_2, p4_3, p2_4],
-    description: 'A collection of mini-projects and concept designs I created while learning UI/UX and front-end development. These projects helped me explore layouts, navigation patterns, visual hierarchy, and responsiveness. Each one reflects hands-on learning and creative problem-solving through tools like Figma, HTML/CSS, and JavaScript.',
-    techStack: ['Figma', 'HTML5', 'CSS3', 'JavaScript'],
-    links: [
-      { label: 'PDF', url: 'https://drive.google.com/file/d/1Y0XqZUtjf6-n6rUBCOSX1HTLO9Qo55AQ/view?usp=drive_link' }
-    ]
-  },
-  {
-    id: 2,
-    title: 'TRAVELSY',
-    type: 'group',
-    images: [p5_1, p5_2, p5_2, p5_2],
-    description: 'TRAVELSY is a web-based platform designed as a one-stop solution for travelers, built for the SIH Hackathon. The website allows users to book tickets, view travel photos, explore locations, and find travel-related information in one place.',
-    techStack: ['HTML5', 'CSS3', 'MySQL', 'Bootstrap'],
-    links: [
-      { label: 'GitHub Link', url: 'https://github.com/rajank18/Travelsy' }
-    ]
-  }
+  id: 8,
+  title: 'DXMUSIC',
+  type: 'individual',
+  images: [p9_1, p9_2, p9_3, p9_4],
+  description: 'DXMUSIC is a personal music portfolio website I built as both an artist and a developer to showcase my songs, visuals, and creative work. The platform includes a secure admin panel with protected routes where I can manage tracks, upload new songs, update details, and view analytics through a dedicated dashboard. Users can explore my music, interact with the interface, and even leave reviews directly on the website. DXMUSIC combines smooth UI design with functional tooling to bring both my technical and artistic sides together in one place.',
+  techStack: ['React', 'Node.js', 'Express', 'Postgresql', 'Tailwind CSS'],
+  links: [
+    { label: 'GitHub Link', url: 'https://github.com/Darshanh20/personal_streaming_platform' },
+    { label: 'Use Here', url: 'https://dhxmusic.vercel.app/' }
+  ]
+}
+
 ]
+
+
 
 export default function ProjectsSection() {
   const [selectedImage, setSelectedImage] = useState(null)
