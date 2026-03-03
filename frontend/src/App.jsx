@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AboutSection from '@components/AboutSection'
-import AnimatedBackground from '@components/AnimatedBackground'
 import ContactSection from '@components/ContactSection'
 import Footer from '@components/Footer'
 import HeroSection from '@components/HeroSection'
@@ -9,7 +8,6 @@ import Navbar from '@components/Navbar'
 import ProjectsSection from '@components/ProjectsSection'
 import SkillsSection from '@components/SkillsSection'
 import SoftSkillsAndFunFactsSection from '@components/SoftSkillsAndFunFactsSection'
-import TechStackGraph from '@components/TechStackGraph'
 import InsightsPage from '@pages/InsightsPage'
 import './App.css'
 
@@ -21,12 +19,10 @@ function App() {
           path="/"
           element={
             <>
-              <AnimatedBackground />
               <Navbar />
-              <main className="pt-24 sm:pt-20">
+              <main className="pt-20">
                 <HeroSection />
                 <SkillsSection />
-                <TechStackGraph />
                 <div id="journey">
                   <JourneySection />
                 </div>

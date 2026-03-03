@@ -3,22 +3,22 @@ import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis
 import { useGithubStats } from '@hooks/useGithubStats'
 
 const LANGUAGE_COLORS = {
-  JavaScript: '#f7df1e',
-  TypeScript: '#3178c6',
-  Python: '#3776ab',
-  React: '#61dafb',
-  'C++': '#00599c',
-  Java: '#007396',
-  CSS: '#563d7c',
-  HTML: '#e34c26',
-  Supabase: '#3ecf8e',
-  SQL: '#336791',
-  Shell: '#89e051',
-  Markdown: '#083fa1',
-  Vue: '#4fc08d',
-  Go: '#00add8',
-  Rust: '#ce422b',
-  PHP: '#777bb4'
+  JavaScript: '#FFD600',
+  TypeScript: '#00B4B4',
+  Python: '#C8F026',
+  React: '#7FE8E8',
+  'C++': '#FF6B1A',
+  Java: '#FF2D78',
+  CSS: '#00B4B4',
+  HTML: '#FF6B1A',
+  Supabase: '#C8F026',
+  SQL: '#7FE8E8',
+  Shell: '#FFD600',
+  Markdown: '#FF2D78',
+  Vue: '#C8F026',
+  Go: '#00B4B4',
+  Rust: '#FF6B1A',
+  PHP: '#FF2D78'
 }
 
 const containerVariants = {
@@ -41,12 +41,21 @@ const itemVariants = {
 const CustomLanguageTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-slate-900/95 border border-cyan-500/30 rounded-lg p-3 backdrop-blur-xl">
-        <p className="text-cyan-300 font-semibold">{payload[0].payload.name}</p>
-        <p className="text-slate-200 text-sm">
-          Repos: <span className="text-cyan-400 font-bold">{payload[0].payload.count}</span>
+      <div style={{
+        background: '#F0EDE6',
+        border: '2px solid #0A0A0A',
+        padding: '12px 16px',
+        boxShadow: '3px 3px 0px #0A0A0A'
+      }}>
+        <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '18px', color: '#0A0A0A' }}>
+          {payload[0].payload.name}
         </p>
-        <p className="text-slate-400 text-xs">{payload[0].payload.percentage}% of projects</p>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '14px', color: '#0A0A0A' }}>
+          Repos: <span style={{ fontWeight: 700 }}>{payload[0].payload.count}</span>
+        </p>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '12px', color: 'rgba(10, 10, 10, 0.7)' }}>
+          {payload[0].payload.percentage}% of projects
+        </p>
       </div>
     )
   }
@@ -59,121 +68,234 @@ export default function GithubInsightsFull() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-        <div className="text-center">
-          <p className="text-red-400 text-xl">Error loading GitHub data. Please check your username.</p>
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#0A0A0A'
+      }}>
+        <div style={{
+          background: '#F0EDE6',
+          border: '2px solid #0A0A0A',
+          padding: '2rem',
+          boxShadow: '5px 5px 0px #FF2D78',
+          textAlign: 'center'
+        }}>
+          <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '24px', color: '#FF2D78' }}>
+            Error loading GitHub data
+          </p>
+          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '14px', color: '#0A0A0A' }}>
+            Please check your username.
+          </p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-12 md:py-20 px-4 md:px-8">
-      {/* Background accents */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto">
+    <div style={{
+      position: 'relative',
+      minHeight: '100vh',
+      backgroundColor: '#0A0A0A',
+      padding: 'clamp(60px, 8vw, 100px) 4vw'
+    }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', paddingTop: '40px' }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-12"
+          style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
+          <motion.div variants={itemVariants} style={{ textAlign: 'center' }}>
+            <h1 style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: 'clamp(40px, 6vw, 80px)',
+              color: '#FFFFFF',
+              textTransform: 'uppercase',
+              letterSpacing: '-0.02em',
+              marginBottom: '1rem'
+            }}>
               GitHub Insights
             </h1>
-            <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+            <p style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: '16px',
+              color: 'rgba(255, 255, 255, 0.7)',
+              maxWidth: '600px',
+              margin: '0 auto',
+              lineHeight: '1.65'
+            }}>
               My GitHub activity, contribution patterns, and coding language preferences.
             </p>
           </motion.div>
 
           {/* Stats Grid */}
-          <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <motion.div variants={itemVariants} style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+            gap: '1.5rem'
+          }}>
             {[
-              { label: 'Total Stars', value: totalStars, icon: '⭐' },
-              { label: 'Public Repos', value: publicRepos, icon: '📦' },
-              { label: 'Followers', value: followers, icon: '👥' },
-              { label: 'Following', value: following, icon: '🔗' }
+              { label: 'Total Stars', value: totalStars, icon: '⭐', color: '#FFD600' },
+              { label: 'Public Repos', value: publicRepos, icon: '📦', color: '#00B4B4' },
+              { label: 'Followers', value: followers, icon: '👥', color: '#FF2D78' },
+              { label: 'Following', value: following, icon: '🔗', color: '#C8F026' }
             ].map((stat, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-xl p-4 md:p-6 text-center hover:border-cyan-500/40 transition-all duration-300 group"
+                style={{
+                  background: '#F0EDE6',
+                  border: '2px solid #0A0A0A',
+                  padding: '1.5rem',
+                  textAlign: 'center',
+                  boxShadow: `4px 4px 0px ${stat.color}`,
+                  transition: 'all 0.15s ease'
+                }}
+                whileHover={{ x: -2, y: -2, boxShadow: `6px 6px 0px ${stat.color}` }}
               >
-                <p className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">{stat.icon}</p>
-                <p className="text-slate-400 text-sm md:text-base font-medium mb-2">{stat.label}</p>
-                <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                <p style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{stat.icon}</p>
+                <p style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: '12px',
+                  fontWeight: 500,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  color: '#0A0A0A',
+                  marginBottom: '0.5rem'
+                }}>{stat.label}</p>
+                <p style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 'clamp(28px, 4vw, 40px)',
+                  color: '#0A0A0A'
+                }}>
                   {stat.value}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 
           {/* Contribution Graph */}
           {!loading && (
-            <motion.div variants={itemVariants} className="space-y-6">
-              <div className="bg-gradient-to-b from-slate-900/40 to-slate-950/40 backdrop-blur-xl border border-cyan-500/15 rounded-2xl p-6 md:p-10 shadow-2xl overflow-x-auto">
-                <h3 className="text-2xl font-bold text-cyan-300 mb-6">Contribution Graph</h3>
-                <img src={contributionGraph} alt="GitHub Contribution Graph" className="w-full h-auto" loading="lazy" />
+            <motion.div variants={itemVariants} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div style={{
+                background: '#F0EDE6',
+                border: '2px solid #0A0A0A',
+                padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+                boxShadow: '5px 5px 0px #0A0A0A',
+                overflowX: 'auto'
+              }}>
+                <h3 style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 'clamp(24px, 3vw, 32px)',
+                  color: '#0A0A0A',
+                  marginBottom: '1.5rem',
+                  textTransform: 'uppercase'
+                }}>Contribution Graph</h3>
+                <img src={contributionGraph} alt="GitHub Contribution Graph" style={{ width: '100%', height: 'auto' }} loading="lazy" />
               </div>
 
               {/* Streak Stats */}
-              <div className="bg-gradient-to-b from-slate-900/40 to-slate-950/40 backdrop-blur-xl border border-cyan-500/15 rounded-2xl p-6 md:p-10 shadow-2xl overflow-hidden">
-                <h3 className="text-2xl font-bold text-cyan-300 mb-6">Contribution Streak</h3>
-                <img src={streakStats} alt="GitHub Streak Stats" className="w-full h-auto" loading="lazy" />
+              <div style={{
+                background: '#F0EDE6',
+                border: '2px solid #0A0A0A',
+                padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+                boxShadow: '5px 5px 0px #FF2D78',
+                overflow: 'hidden'
+              }}>
+                <h3 style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 'clamp(24px, 3vw, 32px)',
+                  color: '#0A0A0A',
+                  marginBottom: '1.5rem',
+                  textTransform: 'uppercase'
+                }}>Contribution Streak</h3>
+                <img src={streakStats} alt="GitHub Streak Stats" style={{ width: '100%', height: 'auto' }} loading="lazy" />
               </div>
             </motion.div>
           )}
 
           {/* Languages Chart */}
           {topLanguages.length > 0 && (
-            <motion.div variants={itemVariants} className="bg-gradient-to-b from-slate-900/40 to-slate-950/40 backdrop-blur-xl border border-cyan-500/15 rounded-2xl p-6 md:p-10 shadow-2xl">
-              <h3 className="text-2xl font-bold text-cyan-300 mb-8">Top Languages</h3>
+            <motion.div variants={itemVariants} style={{
+              background: '#F0EDE6',
+              border: '2px solid #0A0A0A',
+              padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+              boxShadow: '5px 5px 0px #00B4B4'
+            }}>
+              <h3 style={{
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: 'clamp(24px, 3vw, 32px)',
+                color: '#0A0A0A',
+                marginBottom: '2rem',
+                textTransform: 'uppercase'
+              }}>Top Languages</h3>
               <ResponsiveContainer width="100%" height={350}>
                 <BarChart
                   data={topLanguages}
                   margin={{ top: 20, right: 30, left: 0, bottom: 60 }}
-                  style={{ fontFamily: 'inherit' }}
+                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(0, 150, 200, 0.1)" vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(10, 10, 10, 0.15)" vertical={false} />
                   <XAxis
                     dataKey="name"
                     angle={-45}
                     textAnchor="end"
                     height={100}
-                    tick={{ fill: '#cbd5e1', fontSize: 12 }}
-                    axisLine={{ stroke: 'rgba(0, 150, 200, 0.15)' }}
-                    tickLine={{ stroke: 'rgba(0, 150, 200, 0.15)' }}
+                    tick={{ fill: '#0A0A0A', fontSize: 12 }}
+                    axisLine={{ stroke: '#0A0A0A' }}
+                    tickLine={{ stroke: '#0A0A0A' }}
                   />
                   <YAxis
-                    tick={{ fill: '#cbd5e1', fontSize: 12 }}
-                    axisLine={{ stroke: 'rgba(0, 150, 200, 0.15)' }}
-                    tickLine={{ stroke: 'rgba(0, 150, 200, 0.15)' }}
+                    tick={{ fill: '#0A0A0A', fontSize: 12 }}
+                    axisLine={{ stroke: '#0A0A0A' }}
+                    tickLine={{ stroke: '#0A0A0A' }}
                   />
-                  <Tooltip content={<CustomLanguageTooltip />} cursor={{ fill: 'rgba(0, 150, 200, 0.1)' }} />
-                  <Bar dataKey="count" radius={[8, 8, 0, 0]} animationDuration={1500} animationEasing="ease-in-out">
+                  <Tooltip content={<CustomLanguageTooltip />} cursor={{ fill: 'rgba(10, 10, 10, 0.05)' }} />
+                  <Bar dataKey="count" radius={[0, 0, 0, 0]} animationDuration={1500} animationEasing="ease-in-out">
                     {topLanguages.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={LANGUAGE_COLORS[entry.name] || '#0096c8'} opacity={0.85} />
+                      <Cell key={`cell-${index}`} fill={LANGUAGE_COLORS[entry.name] || '#00B4B4'} stroke="#0A0A0A" strokeWidth={2} />
                     ))}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
 
               {/* Language List */}
-              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-                {topLanguages.map((lang) => (
-                  <div key={lang.name} className="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300">
-                    <div
-                      className="w-3 h-3 rounded-full"
-                      style={{ backgroundColor: LANGUAGE_COLORS[lang.name] || '#0096c8' }}
-                    />
-                    <div className="flex-1">
-                      <p className="text-slate-300 text-sm font-medium">{lang.name}</p>
-                      <p className="text-slate-500 text-xs">{lang.percentage}%</p>
+              <div style={{
+                marginTop: '2rem',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '1rem'
+              }}>
+                {topLanguages.map((lang, idx) => (
+                  <div key={lang.name} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    padding: '12px 16px',
+                    background: '#FFFFFF',
+                    border: '2px solid #0A0A0A',
+                    boxShadow: '2px 2px 0px #0A0A0A',
+                    transition: 'all 0.15s ease'
+                  }}>
+                    <div style={{
+                      width: '16px',
+                      height: '16px',
+                      backgroundColor: LANGUAGE_COLORS[lang.name] || '#00B4B4',
+                      border: '2px solid #0A0A0A'
+                    }} />
+                    <div style={{ flex: 1 }}>
+                      <p style={{
+                        fontFamily: "'Bebas Neue', sans-serif",
+                        fontSize: '16px',
+                        color: '#0A0A0A'
+                      }}>{lang.name}</p>
+                      <p style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: '12px',
+                        color: 'rgba(10, 10, 10, 0.6)'
+                      }}>{lang.percentage}%</p>
                     </div>
                   </div>
                 ))}
@@ -183,9 +305,25 @@ export default function GithubInsightsFull() {
 
           {/* Loading State */}
           {loading && (
-            <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400" />
-              <p className="text-slate-400 mt-4">Loading GitHub insights...</p>
+            <div style={{ textAlign: 'center', padding: '3rem 0' }}>
+              <div style={{
+                display: 'inline-block',
+                width: '48px',
+                height: '48px',
+                border: '4px solid #F0EDE6',
+                borderTopColor: '#00B4B4',
+                animation: 'spin 1s linear infinite'
+              }} />
+              <p style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                color: 'rgba(255, 255, 255, 0.7)',
+                marginTop: '1rem'
+              }}>Loading GitHub insights...</p>
+              <style>{`
+                @keyframes spin {
+                  to { transform: rotate(360deg); }
+                }
+              `}</style>
             </div>
           )}
         </motion.div>

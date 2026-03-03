@@ -1,14 +1,32 @@
+/* ===================================
+   FOOTER - NEO-BRUTALIST
+   =================================== */
+
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10vh;
-  color: #fff;
-  font-size: 0.9rem;
-  background-color: #000;
-  border-top: 1px solid #333;
+  padding: clamp(40px, 6vw, 80px) 20px;
+  background-color: #0A0A0A;
+  border-top: 4px solid #FFFFFF;
+}
+
+.footer-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 8vw, 80px);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  margin-bottom: 1.5rem;
 }
 
 footer p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }

@@ -19,117 +19,114 @@ export default function SoftSkillsAndFunFactsSection() {
     { icon: '✨', fact: 'I love building clean UI animations' }
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  }
+  const accentColors = ['#00B4B4', '#FF2D78', '#7FE8E8', '#FF6B1A', '#C8F026', '#FFD600']
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.4 }
-    }
-  }
-
-  const Card = ({ title, items, bgGradient }) => (
+  const Card = ({ title, items, colorOffset = 0 }) => (
     <motion.div
-      variants={cardVariants}
-      className="group relative h-full"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      style={{
+        background: '#FFFFFF',
+        border: '2px solid #0A0A0A',
+        boxShadow: '5px 5px 0px #0A0A0A',
+        padding: '2rem',
+        transition: 'all 0.15s ease'
+      }}
+      whileHover={{ x: -3, y: -3, boxShadow: '8px 8px 0px #0A0A0A' }}
     >
-      {/* Card Background Glow */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      {/* Card Container */}
-      <div className="relative bg-gradient-to-br from-slate-900/40 to-slate-950/40 backdrop-blur-xl border border-cyan-500/20 group-hover:border-cyan-500/40 rounded-2xl p-8 md:p-10 h-full transition-all duration-300">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/0 via-cyan-400/50 to-cyan-500/0 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <h3 style={{
+        fontFamily: "'Bebas Neue', sans-serif",
+        fontSize: 'clamp(24px, 3vw, 32px)',
+        color: '#0A0A0A',
+        textTransform: 'uppercase',
+        letterSpacing: '-0.02em',
+        marginBottom: '1.5rem'
+      }}>
+        {title}
+      </h3>
 
-        {/* Title */}
-        <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-8">
-          {title}
-        </h3>
-
-        {/* Items Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="space-y-4"
-        >
-          {items.map((item, idx) => (
-            <motion.div
-              key={idx}
-              variants={itemVariants}
-              className="flex items-start gap-4 group/item"
-            >
-              {/* Icon Background */}
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 group-hover/item:from-cyan-500/20 group-hover/item:to-blue-500/20 flex items-center justify-center transition-all duration-300">
-                <span className="text-xl">{item.icon}</span>
-              </div>
-
-              {/* Text */}
-              <div className="flex-grow pt-1">
-                <p className="text-slate-200 group-hover/item:text-cyan-300 transition-colors duration-300 font-medium">
-                  {item.skill || item.fact}
-                </p>
-              </div>
-
-              {/* Hover indicator */}
-              <div className="flex-shrink-0 w-1 h-1 rounded-full bg-cyan-400 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 mt-1.5" />
-            </motion.div>
-          ))}
-        </motion.div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        {items.map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: idx * 0.1 }}
+            viewport={{ once: true }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              padding: '0.75rem 1rem',
+              background: accentColors[(idx + colorOffset) % accentColors.length],
+              border: '2px solid #0A0A0A',
+              boxShadow: '3px 3px 0px #0A0A0A',
+              transition: 'all 0.15s ease',
+              cursor: 'default'
+            }}
+            whileHover={{ rotate: -1, scale: 1.02 }}
+          >
+            <span style={{ fontSize: '1.25rem' }}>{item.icon}</span>
+            <span style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: '14px',
+              fontWeight: '500',
+              color: idx === 1 || idx === 4 ? '#FFFFFF' : '#0A0A0A'
+            }}>
+              {item.skill || item.fact}
+            </span>
+          </motion.div>
+        ))}
       </div>
     </motion.div>
   )
 
   return (
-    <section className="relative py-20 md:py-28 px-4 md:px-8 bg-gradient-to-b from-slate-950/30 via-slate-900/20 to-slate-950/30">
-      {/* Background accents */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto">
+    <section style={{
+      padding: 'clamp(60px, 8vw, 120px) 4vw',
+      backgroundColor: '#0A0A0A'
+    }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-center mb-16 md:mb-20"
+          viewport={{ once: true }}
+          style={{ textAlign: 'center', marginBottom: '3rem' }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
+          <h2 style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: 'clamp(28px, 4vw, 52px)',
+            color: '#FFFFFF',
+            textTransform: 'uppercase',
+            letterSpacing: '-0.02em',
+            marginBottom: '1rem'
+          }}>
             More About Me
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: '15px',
+            color: 'rgba(255, 255, 255, 0.7)',
+            maxWidth: '600px',
+            margin: '0 auto',
+            lineHeight: '1.65'
+          }}>
             Beyond code, here's what makes me tick—my core strengths and the little things that inspire my work.
           </p>
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-10">
-          <Card title="Soft Skills" items={softSkills} />
-          <Card title="Fun Facts About Me" items={funFacts} />
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2rem'
+        }}>
+          <Card title="Soft Skills" items={softSkills} colorOffset={0} />
+          <Card title="Fun Facts About Me" items={funFacts} colorOffset={3} />
         </div>
       </div>
     </section>

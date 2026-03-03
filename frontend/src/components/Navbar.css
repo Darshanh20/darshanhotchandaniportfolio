@@ -1,41 +1,64 @@
+/* ===================================
+   NAVBAR - NEO-BRUTALIST
+   =================================== */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
+  height: 80px;
   padding: 0 2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: #0A0A0A;
 }
 
 .name {
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #0096c8;
+  font-weight: 400;
+  color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(0, 150, 200, 0.5);
-  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-shadow: none;
+  transition: all 0.15s ease;
   cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
 .name:hover {
-  color: #00c4e8;
-  text-shadow: 0 0 20px rgba(0, 150, 200, 0.8);
-  transform: scale(1.05);
+  color: #00B4B4;
 }
 
 .hamburger {
   font-size: 2rem;
   background: none;
-  color: #fff;
+  color: #FFFFFF;
   border: none;
   cursor: pointer;
   display: none;
+  padding: 8px;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.hamburger:hover {
+  border-color: #FFFFFF;
 }
 
 .navlinks {
   display: flex;
-  gap: 3rem;
+  align-items: center;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -43,31 +66,47 @@
 
 .navlinks li {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.navlinks li a {
-  font-size: 1.1rem;
-  color: #fff;
+.navlinks li a,
+.navlinks li button {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
   text-decoration: none;
-  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-block;
+  line-height: 1.5;
 }
 
-.navlinks li a::after {
+.navlinks li a:hover,
+.navlinks li button:hover {
+  color: #00B4B4;
+}
+
+.navlinks li a::after,
+.navlinks li button::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
-  background-color: #0ff;
-  transition: width 0.3s ease;
+  background-color: #00B4B4;
+  transition: width 0.15s ease;
 }
 
-.navlinks li a:hover {
-  color: #0ff;
-}
-
-.navlinks li a:hover::after {
+.navlinks li a:hover::after,
+.navlinks li button:hover::after {
   width: 100%;
 }
 
@@ -78,25 +117,31 @@
 
   .navlinks {
     flex-direction: column;
-    gap: 2rem;
+    gap: 0;
     position: absolute;
-    top: 10vh;
+    top: 80px;
     right: 0;
-    background-color: #111;
+    background-color: #0A0A0A;
     width: 100%;
     text-align: center;
     display: none;
-    padding: 2rem 0;
+    padding: 1rem 0;
     z-index: 100;
+    border-bottom: 2px solid #FFFFFF;
   }
 
   .navlinks.active {
     display: flex;
   }
 
+  .navlinks li a,
+  .navlinks li button {
+    display: block;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+
   .name {
-    color: #FFA500;
-    text-shadow: 0 0 10px #FFA500;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }

@@ -3,7 +3,8 @@ import './Footer.css'
 export default function Footer() {
   return (
     <footer>
-      <p>&copy; {new Date().getFullYear()} Darshan Hotchandani. All rights reserved.</p>
+      <div className="footer-brand">DARSHAN HOTCHANDANI</div>
+      <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
     </footer>
   )
 }

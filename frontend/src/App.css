@@ -2,3 +2,12 @@
 main {
   min-height: calc(100vh - 20vh);
 }
+
+/* Grid-based layout system */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}

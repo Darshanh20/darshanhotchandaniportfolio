@@ -1,12 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===================================
+   NEO-BRUTALIST DESIGN SYSTEM
+   =================================== */
+
+:root {
+  /* Primary backgrounds */
+  --bg-dark: #0A0A0A;
+  --bg-cream: #F0EDE6;
+  --white: #FFFFFF;
+  --black: #0A0A0A;
+  
+  /* Accent colors */
+  --accent-teal: #00B4B4;
+  --accent-pink: #FF2D78;
+  --accent-cyan: #7FE8E8;
+  --accent-orange: #FF6B1A;
+  --accent-lime: #C8F026;
+  --accent-yellow: #FFD600;
+  
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 3px 3px 0px #0A0A0A;
+  --shadow-md: 4px 4px 0px #0A0A0A;
+  --shadow-lg: 5px 5px 0px #0A0A0A;
+  --shadow-xl: 8px 8px 0px #0A0A0A;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -14,59 +45,218 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #0a0a0f 0%, #0f1419 50%, #0a0a0f 100%);
-  color: #d0d8e8;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  background-color: var(--bg-dark);
+  color: var(--white);
   width: 100%;
   position: relative;
   overflow-x: hidden;
+  font-size: clamp(14px, 1.2vw, 17px);
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(0, 150, 200, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(30, 80, 150, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 0%, rgba(0, 100, 180, 0.04) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  font-weight: 400;
 }
 
-body > * {
-  position: relative;
-  z-index: 1;
+h1 {
+  font-size: clamp(40px, 6vw, 80px);
 }
 
-/* General Utility Classes */
-.section-divider {
-  width: 80%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 213, 255, 0.5), transparent);
-  margin: 60px auto;
+h2 {
+  font-size: clamp(28px, 4vw, 52px);
 }
+
+h3 {
+  font-size: clamp(20px, 2.5vw, 32px);
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+/* ===================================
+   SECTION TITLE - NEO-BRUTALIST
+   =================================== */
 
 .section-title {
+  font-family: var(--font-display);
   text-align: center;
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 400;
   margin-bottom: 40px;
-  background: linear-gradient(135deg, rgba(0, 213, 255, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 213, 255, 0.2);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: -1px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  color: var(--black);
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  text-shadow: none;
 }
 
-/* Responsive Design */
+.section-title--light {
+  color: var(--white);
+}
+
+/* ===================================
+   CREAM SECTION WITH GRID PATTERN
+   =================================== */
+
+.section-cream {
+  background-color: var(--bg-cream);
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.section-dark {
+  background-color: var(--bg-dark);
+}
+
+/* ===================================
+   BUTTONS - NEO-BRUTALIST
+   =================================== */
+
+.btn {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 14px 28px;
+  border: 2px solid var(--black);
+  border-radius: 0;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--black);
+}
+
+.btn--primary {
+  background: var(--accent-teal);
+  color: var(--black);
+}
+
+.btn--secondary {
+  background: var(--bg-cream);
+}
+
+/* ===================================
+   CARDS - NEO-BRUTALIST
+   =================================== */
+
+.card {
+  background: var(--bg-cream);
+  border: 2px solid var(--black);
+  border-radius: 0;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.15s ease;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===================================
+   BADGES / TAGS - NEO-BRUTALIST
+   =================================== */
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 10px 16px;
+  border: 2.5px solid var(--black);
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+  font-size: 12px;
+  transition: all 0.15s ease;
+}
+
+.badge:hover {
+  transform: rotate(-2deg) scale(1.04);
+}
+
+.badge--teal { background: var(--accent-teal); color: var(--black); }
+.badge--pink { background: var(--accent-pink); color: var(--white); }
+.badge--cyan { background: var(--accent-cyan); color: var(--black); }
+.badge--orange { background: var(--accent-orange); color: var(--black); }
+.badge--lime { background: var(--accent-lime); color: var(--black); }
+.badge--yellow { background: var(--accent-yellow); color: var(--black); }
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+@keyframes fadeUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(24px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-in {
+  animation: fadeUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+
+/* ===================================
+   LAYOUT UTILITIES
+   =================================== */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: clamp(60px, 8vw, 120px) 0;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(24px, 6vw, 36px);
     margin-bottom: 30px;
   }
 }
