@@ -7,13 +7,13 @@ export default function SoftSkillsAndFunFactsSection() {
     { icon: '⏱️', skill: 'Time Management' },
     { icon: '🧩', skill: 'Problem Solving' },
     { icon: '🔄', skill: 'Adaptability' },
-    { icon: '👁️', skill: 'Attention to Detail' }
+    { icon: '📢', skill: 'Public Speaking' }
   ]
 
   const funFacts = [
     { icon: '🎤', fact: 'I write rap lyrics' },
-    { icon: '🎨', fact: 'I design UIs' },
-    { icon: '📺', fact: 'I love anime & cricket' },
+    { icon: '🎨', fact: 'I design UIs' }, 
+    { icon: '📺', fact: 'I love cricket' },
     { icon: '⚡', fact: 'My favorite tech: React, Tailwind, Supabase' },
     { icon: '🎵', fact: 'My coding playlist is full of lofi & trap beats' },
     { icon: '✨', fact: 'I love building clean UI animations' }
