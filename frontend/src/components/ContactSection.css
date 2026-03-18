@@ -113,6 +113,26 @@
   padding: 3rem 2rem;
 }
 
+.direct-email {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  color: #0A0A0A;
+  margin-bottom: 1.5rem;
+}
+
+.direct-email a {
+  color: #0A0A0A;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: all 0.15s ease;
+}
+
+.direct-email a:hover {
+  color: #FF2D78;
+}
+
 .socials-row {
   display: flex;
   gap: 2rem;
@@ -159,6 +179,11 @@
   .socials {
     margin-top: 2rem;
     padding: 1.5rem;
+  }
+
+  .direct-email {
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .socials-row {

@@ -121,6 +121,10 @@ export default function ContactSection() {
       {message && <div className="form-message">{message}</div>}
 
       <div className="socials">
+        <p className="direct-email">
+          Prefer email? Reach me at{' '}
+          <a href="mailto:darshanhotchandani07@gmail.com">darshanhotchandani07@gmail.com</a>
+        </p>
         <div className="socials-row">
           <a href="https://github.com/Darshanh20" target="_blank" rel="noopener noreferrer">
             <img src={githubIcon} alt="GitHub" className="social-icon" />
