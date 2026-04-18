@@ -15,7 +15,7 @@ const JOURNEY_DATA = [
   },
   {
     id: 2,
-    title: 'Charotar University',
+    title: 'Charotar University Of Science And Technology',
     period: 'B.Tech IT, 2023 - 2027',
     description: 'Currently pursuing B.Tech in Information Technology, building a strong foundation in computer science, software engineering, and full-stack development.',
     icon: collegeIcon,
@@ -24,7 +24,7 @@ const JOURNEY_DATA = [
     id: 3,
     title: 'CodeClause Intern',
     period: 'May 2025 - June 2025',
-    description: 'Web Developer at CodeClause, building real-world projects like a secure, no-login file-sharing platform using React, Supabase, and Netlify.',
+    description: 'Web Developer at CodeClause, building real-world projects like a secure, no-login file-sharing platform using React, Supabase, and Vercel.',
     icon: codeclauseIcon,
   }
 ]
