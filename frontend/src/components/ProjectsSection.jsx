@@ -23,6 +23,14 @@ import p9_1 from '@assets/p9(1).png'
 import p9_2 from '@assets/p9(2).png'
 import p9_3 from '@assets/p9(3).png'
 import p9_4 from '@assets/p9(4).png'
+import p10_1 from '@assets/p10(1).png'
+import p10_2 from '@assets/p10(2).png'
+import p10_3 from '@assets/p10(3).png'
+import p10_4 from '@assets/p10(4).png'
+import p11_1 from '@assets/p11(1).jpg'
+import p11_2 from '@assets/p11(2).jpg'
+import p11_4 from '@assets/p11(4).jpg'
+import p11_5 from '@assets/p11(5).jpg'
 import './ProjectsSection.css'
 
 const PROJECTS = [
@@ -107,6 +115,28 @@ const PROJECTS = [
     { label: 'Use Here', url: 'https://dhxmusic.vercel.app/' }
   ]
 }
+
+  ,{
+    id: 9,
+    title: 'SyncMind AI',
+    type: 'group',
+    images: [p10_1, p10_2, p10_3, p10_4],
+    description: 'SyncMind AI is a smart assistant (built during a 48-hour hackathon) that turns real-life conversations into clear, actionable insights — crisp summaries, smart questions & Q&A flipcards, follow-up tasks, and calendar-ready dates. Drop a YouTube link to get the same outputs instantly. Built with a Python backend and Next.js frontend; integrates GROQ for LLM inference, Cohere for advanced NLP, and Deepgram for high-accuracy speech-to-text. Includes a Workspace feature for teams to collaborate, share recordings, and track outcomes.',
+    techStack: ['Python', 'Next.js', 'GROQ', 'Cohere', 'Deepgram' , 'React'],
+    links: [
+      { label: 'GitHub Link', url: 'https://github.com/Darshanh20/OceanLab_Hacks_SALC' },
+      { label: 'Live Demo', url: 'https://ocean-lab-hacks-salc-kappa.vercel.app/' }
+    ]
+  },
+  {
+    id: 10,
+    title: 'D.A.O Browser',
+    type: 'group',
+    images: [p11_1, p11_2, p11_4, p11_5],
+    description: 'D.A.O (Distraction-free, Ad-free, Optimized) Browser is a custom Chromium-based desktop browser built with Electron, started from scratch as a curiosity-driven challenge. It focuses on control, privacy, and productivity with practical features like Exam Mode (allowed-sites-only browsing), Focus Mode (social distraction blocking), Ad Blocking, Adult Content Blocking, and an AI webpage summarizer. While building it, we learned browser internals end-to-end, including Chromium rendering flow and Electron request interception to dynamically change browsing behavior in real time. The project is currently around 40% complete and actively improving.',
+    techStack: ['Chromium', 'Electron'],
+    links: [{ label: 'GitHub Link', url: 'https://github.com/Darshanh20/DAO-BROWSER'}]
+  }
 
 ]
 

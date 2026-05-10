@@ -191,7 +191,7 @@ export default function HeroSection() {
               <span className="stat-label">Projects</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">1+</span>
+              <span className="stat-number">2+</span>
               <span className="stat-label">Years Learning</span>
             </div>
             <div className="stat-item">
